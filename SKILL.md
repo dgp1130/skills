@@ -25,6 +25,10 @@ See the following files for individual skills when necessary.
 
 See @reference/design.md for advice on design and architecture of code.
 
+### Testing
+
+See @reference/testing.md for advice on testing philosophy.
+
 ### Git Rebasing
 
 I use a "rebase" workflow, meaning I create a PR with a few commits in it, and then amend and
