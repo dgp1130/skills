@@ -21,6 +21,10 @@ description: My personal skills and preferences.
 
 See the following files for individual skills when necessary.
 
+### Design & Architecture
+
+See @reference/design.md for advice on design and architecture of code.
+
 ### Git Rebasing
 
 I use a "rebase" workflow, meaning I create a PR with a few commits in it, and then amend and
