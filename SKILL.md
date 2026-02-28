@@ -29,6 +29,10 @@ See @reference/design.md for advice on design and architecture of code.
 
 See @reference/testing.md for advice on testing philosophy.
 
+### TypeScript / JavaScript
+
+See @reference/typescript.md for my personal style guide for writing TypeScript and JavaScript.
+
 ### Git Rebasing
 
 I use a "rebase" workflow, meaning I create a PR with a few commits in it, and then amend and
