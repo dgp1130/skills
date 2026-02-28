@@ -146,3 +146,15 @@ class User {
   }
 }
 ```
+
+## Prefer `??`
+
+Prefer `??` over `||` for providing default values.
+
+```typescript
+// BAD!
+const x = y || 0;
+
+// GOOD!
+const x = y ?? 0;
+```
