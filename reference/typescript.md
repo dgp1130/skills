@@ -3,6 +3,37 @@
 When generating code, follow the below guidance on my personal "voice" of TS / JS code. Prefer
 following project-local and file-local conventions where they appear to disagree with this guidance.
 
+## Format
+
+* Use K&R indentation style with subsequent blocks on the same line as the
+  trailing `}`.
+* Use 2 spaces for indentation.
+* Use 100 columns for line length limits.
+
+```typescript
+if (foo) {
+  // ...
+} else if (bar) {
+  // ...
+} else {
+  // ...
+}
+```
+
+* Use trailing commas.
+
+```typescript
+doSomething(
+  {
+    foo: 1,
+  },
+  [
+    2,
+  ],
+  3,
+);
+```
+
 ## Avoid `any` Whenever Possible
 
 Do *not* use `any` as a type unless absolutely necessary. If writing a function where the type is
@@ -67,6 +98,10 @@ if (x) {
 // BAD! Too long.
 if (someLongConditional) return doSomethingEvenLongerAndMoreComplex(withComplicatedArgument());
 
+// BAD! Don't use a new line without braces.
+if (someLongConditional)
+  return doSomethingEvenLongerAndMoreComplex(withComplicatedArgument());
+
 // GOOD! Simple and clear.
 if (x) return y();
 for (const x of y) validate(x);
@@ -74,11 +109,31 @@ if (!isValid(x)) throw new Error('...');
 if (!isValid(x)) continue;
 ```
 
+## Switch Statements
+
+* Prefer `switch` statements over `if` statements when appropriate.
+* Always brace `case` statements.
+* Always include a `break;`, `return;`, or `throw;` statement in each `case`,
+  *never* fall through.
+
+```typescript
+switch (foo) {
+  case bar: {
+    // ...
+    break;
+  } default: {
+    // ...
+    break;
+  }
+}
+```
+
 ## Iterators
 
 Prefer `for` loops over `while` loops whenever possible. Avoid manual iteration in a `for` loop and
-`for...in` whenever possible. Consider the use of generators for more complex iteration patterns.
-Use `Generator<T, void, void>` as the preferred return type.
+`for...in` whenever possible. If you need the index of a value, consider `Object.entries` or another
+iterator. Consider the use of generators for more complex iteration patterns. Use
+`Generator<T, void, void>` as the preferred return type.
 
 ```typescript
 // BAD! Iteration and function body are tied together.
@@ -122,15 +177,32 @@ global shared configuration.
 ## Minimize Constructors
 
 Avoid doing any meaningful work in a constructor. Constructors exist to save input state to class
-fields and call `super`, nothing more. If a class requires significant setup, consider using a
-factory function.
+fields and call `super`, nothing more. Do *not* use post-construction `initialize()` steps. If a
+class requires non-trivial setup, consider using a factory function.
 
 ```typescript
 // BAD! Doing side effects in a constructor.
 class User {
+  name: string;
+  company: Company;
+
   constructor(name: string) {
     this.name = name;
     this.company = getCompany(name);
+  }
+}
+
+// BAD! Using post-construction initialization.
+class User {
+  name: string;
+  company!: Company;
+
+  constructor(name: string) {
+    this.name = name;
+  }
+
+  initialize(): void {
+    this.company = getCompany(this.name);
   }
 }
 
@@ -157,4 +229,47 @@ const x = y || 0;
 
 // GOOD!
 const x = y ?? 0;
+```
+
+## Minimize Try Scope
+
+Narrowly define `try-catch` statements to only catch unexpected errors for a particular line or
+expression as much as possible.
+
+```typescript
+// BAD! Catching too much.
+try {
+  doSomething();
+
+  doSomethingElse();
+
+  doOneMoreThing();
+} catch (e) {
+  // ...
+}
+
+// GOOD! Catching only what we expect to throw.
+try {
+  doSomething();
+} catch (e) {
+  // ...
+}
+doSomethingElse();
+doOneMoreThing();
+```
+
+## Comments
+
+Include doc comments on exported or significant functions. Do not repeat type information.
+
+```typescript
+/**
+ * A function that does something.
+ *
+ * @param arg - The argument to do something with.
+ * @returns The result of doing something with the argument.
+ */
+export function doSomething(arg: string): string {
+  // ...
+}
 ```
