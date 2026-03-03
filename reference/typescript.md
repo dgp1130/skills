@@ -63,6 +63,18 @@ const x: number = doComplicatedThing(withSomeArgumentWhichDefinesTheReturnType()
 Prefer `undefined` as the "no value" literal over `null`, as this aligns better with options
 parameter and properties.
 
+## Semicolons
+
+Always use semicolons to terminate statements.
+
+```typescript
+// BAD! Missing semicolon.
+const x = 1
+
+// GOOD! Semicolon present.
+const x = 1;
+```
+
 ## Name Empty Arguments
 
 When calling a function with `null`, `undefined`, generic primitive value, or other "empty" value,
