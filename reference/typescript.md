@@ -285,3 +285,33 @@ export function doSomething(arg: string): string {
   // ...
 }
 ```
+
+## Minimize Work In Promises
+
+Prefer `async` / `await` as much as possible and when `new Promise(...)` is needed, keep it's logic
+limited to resolving / rejecting the `Promise` appropriately and move any other work into an `async`
+/ `await` layer.
+
+```typescript
+
+// BAD! Doing work inside of a Promise constructor.
+function doSomething(arg: string): Promise<number> {
+  return new Promise<number>((resolve) => {
+    setTimeout(() => {
+      const result = doComplicatedThing(arg);
+      resolve(result);
+    });
+  });
+}
+
+// GOOD! Moving work out of the `Promise` constructor.
+async function doSomething(arg: string): Promise<number> {
+  await new Promise<void>((resolve) => {
+    setTimeout(() => {
+      resolve();
+    });
+  });
+
+  return doComplicatedThing(arg);
+}
+```
