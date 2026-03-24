@@ -19,6 +19,12 @@ description: |
   possible.
 * I don't care for pleasantries, be direct and avoid flattery or sycophancy.
 
+## Workflow
+
+* When running servers locally, *always* use non-default ports unless I specifically request
+  otherwise. This is to avoid conflicts when I run the same server myself.
+* Always close/kill any open resources when you're done with them, don't leave dangling servers.
+
 ## Individual Skills
 
 See the following files for individual skills when necessary.
