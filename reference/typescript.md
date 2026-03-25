@@ -315,3 +315,10 @@ async function doSomething(arg: string): Promise<number> {
   return doComplicatedThing(arg);
 }
 ```
+
+## References
+
+When referring to TS/JS symbols in comments, commit messages, or user responses, use
+`Foo.prototype.bar` syntax to refer to methods / properties. Don't use `()` for functions unless
+you are specifically referring to an invoked situation. You can abbreviate to just the method /
+property name (`bar`) in repeated situations or when the class name is obvious.
