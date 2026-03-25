@@ -16,3 +16,6 @@
 * You may create a WIP commit with some suggestions and leave it for me to squash myself.
 * DO NOT EVER edit `.git/` files directly. Only use `git` commands to interact with source control.
 * Do not push any changes to a remote, I will push when I am comfortable with changes.
+* Do not apply hard line wrapping in Git commits messages or enforce length limits. It is ok for a
+  "paragraph to be written on one line.
+* Commit messages use markdown format. Include links, lists, tables, etc. as appropriate.
