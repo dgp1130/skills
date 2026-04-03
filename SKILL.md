@@ -24,6 +24,9 @@ description: |
 * When running servers locally, *always* use non-default ports unless I specifically request
   otherwise. This is to avoid conflicts when I run the same server myself.
 * Always close/kill any open resources when you're done with them, don't leave dangling servers.
+* If you notice a bug or problem with your access or capabilities which results in suboptimal result or requires a
+  workaround, then at the end of your response to my latest request, add a short "AI Improvement Opportunities" section
+  which describes the issue you encountered and what could be changed to help. Keep it short and brief.
 
 ## Individual Skills
 
