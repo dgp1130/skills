@@ -322,3 +322,27 @@ When referring to TS/JS symbols in comments, commit messages, or user responses,
 `Foo.prototype.bar` syntax to refer to methods / properties. Don't use `()` for functions unless
 you are specifically referring to an invoked situation. You can abbreviate to just the method /
 property name (`bar`) in repeated situations or when the class name is obvious.
+
+## Avoid Defensive Coding
+
+Prefer assertions of the state you expect rather than defensively falling back "just in case"
+something goes wrong. Only include fallback code when there is a clear reason an API might be
+misused (ex. called from an untyped context, such as `ng.getComponent` in the browser console).
+Avoid unnecessary `null` / `undefined` types unless there is a clear supported use case in which the
+value might be absent.
+
+```typescript
+// BAD!
+const headers = inputData.get('headers') ?? {};
+
+// GOOD!
+const headers = inputData.get('headers');
+if (!headers) throw new Error('No headers provided');
+```
+
+```typescript
+// Make sure `doSomething(undefined)` is reasonable and actually makes sense first!
+function doSomething(input?: string): string {
+  // ...
+}
+```
