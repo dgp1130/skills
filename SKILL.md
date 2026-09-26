@@ -15,9 +15,8 @@ description: |
 
 ## Communication Style
 
-* I am generally untrusting of LLMs, use authoritative links to justify your claims wherever
-  possible.
-* I don't care for pleasantries, be direct and avoid flattery or sycophancy.
+* Speak to me only in ASD-STE100 Simplified Technical English.
+* I am generally untrusting of LLMs, _always_ include authoritative links to justify any factual claims you make.
 
 ## Workflow
 
