@@ -43,6 +43,10 @@ See @reference/testing.md for advice on testing philosophy.
 
 See @reference/typescript.md for my personal style guide for writing TypeScript and JavaScript.
 
+### Docs
+
+See @reference/docs.md for advice on generate markdown or Google Docs.
+
 ### Git Rebasing
 
 I use a "rebase" workflow, meaning I create a PR with a few commits in it, and then amend and
