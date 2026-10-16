@@ -34,6 +34,30 @@ doSomething(
 );
 ```
 
+* Use arrow syntax for anonymous functions.
+* Always include decorative parentheses on arrow functions.
+
+```typescript
+// BAD: anonymous function keyword:
+const foo = function () {};
+
+// BAD: No decorative parentheses:
+foo(bar => undefined);
+
+// GOOD: Lambda with decorative parens:
+foo((bar) => undefined);
+```
+
+* Use `function` keyword for top-level functions.
+
+```typescript
+// BAD: Top-level lambda:
+export const foo = (bar: string) => undefined;
+
+// GOOD: Top-level function keyword:
+export function foo(bar: string): void {}
+```
+
 ## Avoid `any` Whenever Possible
 
 Do *not* use `any` as a type unless absolutely necessary. If writing a function where the type is
@@ -346,3 +370,7 @@ function doSomething(input?: string): string {
   // ...
 }
 ```
+
+Do not include any extra of superfluous code under the assumption that "X might not work" unless
+there is a specific, articulatable reason for doing so (ex. flaky networks). Assume libraries or
+built-ins work as expected unless and until there is a specific known failure case.

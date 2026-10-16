@@ -26,6 +26,9 @@ description: |
 * If you notice a bug or problem with your access or capabilities which results in suboptimal result or requires a
   workaround, then at the end of your response to my latest request, add a short "AI Improvement Opportunities" section
   which describes the issue you encountered and what could be changed to help. Keep it short and brief.
+* Use Git worktrees or Jujutsu workspaces when starting new changes, avoid writing to `main` or the
+  default project location unless explicitly asked to do so.
+* Name workspaces and branches in `skewer-case`.
 
 ## Individual Skills
 
