@@ -29,6 +29,8 @@ description: |
 * Use Git worktrees or Jujutsu workspaces when starting new changes, avoid writing to `main` or the
   default project location unless explicitly asked to do so.
 * Name workspaces and branches in `skewer-case`.
+* Write commits in markdown syntax, assuming an infinite line length. Still break between
+  paragraphs, but do not wrap individual lines.
 
 ## Individual Skills
 
