@@ -31,6 +31,10 @@ description: |
 * Name workspaces and branches in `skewer-case`.
 * Write commits in markdown syntax, assuming an infinite line length. Still break between
   paragraphs, but do not wrap individual lines.
+* My working directory is not your scratch space. Any one off scripts or quick tests should be written outside the
+  current workspace in a brain directory or `/tmp` space.
+* When testing agentic tooling such as an MCP server, use a subagent with specific instructions rather than
+  a test script unless that is specifically requested.
 
 ## Individual Skills
 
