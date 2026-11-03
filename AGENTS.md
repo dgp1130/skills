@@ -41,6 +41,7 @@ description: My personal skills and preferences.
   escalate to me first and get my explicit agreement before doing so.
 * Always keep the repository in a "valid" state. Do not leave obsolete or divergent commits for me to observe.
   When such commits appear, address them ASAP before they become even more problematic.
+* When creating or pushing a commit, make sure to format files and resolve lint errors.
 
 ## Individual Skills
 
