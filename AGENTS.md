@@ -34,6 +34,11 @@ description: My personal skills and preferences.
   current workspace in a brain directory or `/tmp` space.
 * When testing agentic tooling such as an MCP server, use a subagent with specific instructions rather than
   a test script unless that is specifically requested.
+* When I ask for an e2e test I mean _end to end_, covering the entire described workflow with each component being
+  its real implementation. Do not mock or stub _any_ part of the test unless explicitly told to do so. If you encounter
+  a blocker which is preventing true validation, attempt to solve that problem directly rather than compromise the
+  validity of the test by mocking the relevant component. If you really cannot solve a problem or need a workaround,
+  escalate to me first and get my explicit agreement before doing so.
 
 ## Individual Skills
 
