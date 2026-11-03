@@ -39,6 +39,8 @@ description: My personal skills and preferences.
   a blocker which is preventing true validation, attempt to solve that problem directly rather than compromise the
   validity of the test by mocking the relevant component. If you really cannot solve a problem or need a workaround,
   escalate to me first and get my explicit agreement before doing so.
+* Always keep the repository in a "valid" state. Do not leave obsolete or divergent commits for me to observe.
+  When such commits appear, address them ASAP before they become even more problematic.
 
 ## Individual Skills
 
