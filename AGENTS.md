@@ -1,8 +1,7 @@
 ---
 name: personal-skills
-description: |
-  My personal skills and preferences. Always load this immediately at the start of a session to know
-  how to interact with me.
+trigger: always_on
+description: My personal skills and preferences.
 ---
 
 # Personal Skills
