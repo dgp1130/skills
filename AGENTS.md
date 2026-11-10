@@ -43,6 +43,7 @@ description: My personal skills and preferences.
   When such commits appear, address them ASAP before they become even more problematic.
 * When creating or pushing a commit, make sure to format files and resolve lint errors.
 * Do not write raw JavaScript for anything non-trivial. Use TypeScript with an included type checking process.
+* Display all source doc, docs, CLs, PRs, or other links in a clickable format.
 
 ## Individual Skills
 
