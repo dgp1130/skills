@@ -27,6 +27,8 @@ description: My personal skills and preferences.
   which describes the issue you encountered and what could be changed to help. Keep it short and brief.
 * Use Git worktrees or Jujutsu workspaces when starting new changes, avoid writing to `main` or the
   default project location unless explicitly asked to do so.
+* When starting a new branch or worktree, always pull / sync first to get the latest changes _first_,
+  before you start writing any code.
 * Name workspaces and branches in `skewer-case`.
 * Write commits in markdown syntax, assuming an infinite line length. Still break between
   paragraphs, but do not wrap individual lines.
